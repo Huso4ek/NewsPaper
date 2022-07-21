@@ -1,0 +1,58 @@
+a = User.objects.create_user(username='Fedor')
+b = User.objects.create_user(username='Evgen')
+u1 = User.objects.create_user(username='Vitaliy')
+u2 = User.objects.create_user(username='Grigor')	
+
+Author.objects.create(authorUser=a)
+Author.objects.create(authorUser=b)
+Author.objects.create(authorUser=c)
+Author.objects.create(authorUser=d)
+
+Category.objects.create(name="Animals")
+Category.objects.create(name="Birds")
+Category.objects.create(name="Fish")
+Category.objects.create(name="Insects")
+	
+author = Author.objects.get(id=1)
+Post.objects.create(author=author, categoryType='AR', title="Environment and animals", text="Lorem ipsum dolor sit ametdapibus non."
+author = Author.objects.get(id=2)	
+Post.objects.create(author=author, categoryType='AR', title="Are birds from Jurassic Era",text="Lorem ipsum blablabla""
+author = Author.objects.get(id=3)
+Post.objects.create(author=author, categoryType='NW', title="We found the new species!",text="Blablablabla"
+
+Post.objects.get(id=1).postCategory.add(Category.objects.get(id=1))
+Post.objects.get(id=1).postCategory.add(Category.objects.get(id=2))
+Post.objects.get(id=2).postCategory.add(Category.objects.get(id=1))
+Post.objects.get(id=3).postCategory.add(Category.objects.get(id=1))
+
+Comment.objects.create(commentPost=Post.objects.get(id=1), commentUser=AuthorUser, text="pishieshe")
+Comment.objects.create(commentPost=Post.objects.get(id=2), commentUser=AuthorUser, text="neploho")
+Comment.objects.create(commentPost=Post.objects.get(id=3), commentUser=AuthorUser, text="uzhevidel")
+Comment.objects.create(commentPost=Post.objects.get(id=4), commentUser=AuthorUser, text="moguiluchse")
+
+Comment.objects.get(title="Environment and animals"), like()
+Comment.objects.get(title="Are birds from Jurassic Era"), dislike()
+Comment.objects.get(title="Environment and animals"), like()
+Comment.objects.get(title="We found the new species!"), dislike()
+Comment.objects.get(title="Environment and animals"), like()
+
+Comment.objects.get(title="Environment and animals").rating
+Comment.objects.get(title="Are birds from Jurassic Era").rating
+Comment.objects.get(title="We found the new species!").rating
+
+Author.objects.get(id=1)
+a = Author.objects.get(id=1)
+a.update_rating()
+a.ratingAuthor
+
+Comment.objects.get(title="Are birds from Jurassic Era"), like()
+Comment.objects.get(title="Environment and animals"), dislike()
+Comment.objects.get(title="We found the new species!"), like()
+
+a = Author.objects.order_by('-ratingAuthor)[:4] 
+b = Author.objects.order_by('-ratingAuthor)[:4] 
+ 
+ for i in a
+i.ratingAuthor
+i.authorUser.username
+i.dateCreation
